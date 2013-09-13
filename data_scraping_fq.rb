@@ -4,4 +4,4 @@ client = Foursquare2::Client.new(:client_id => 'VLRJQFUOZTUWIK10VPZ2NJ30DS3YLKV5
 
 postos = client.search_venues(:near => "Pernambuco", :query => "Posto Total")
 
-puts postos.
+puts postos

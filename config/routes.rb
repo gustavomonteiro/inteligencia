@@ -1,4 +1,7 @@
 Inteligencia::Application.routes.draw do
+  resources :postos
+
+
   resources :municipios
 
 

@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  nome: MyString
+  endereco: MyString
+  bairro: MyString
+  distribuidora: MyString
+  preco_venda: 9.99
+  preco_compra: 9.99
+  modalidade: MyString
+  fornecedor: MyString
+  data_coleta: MyString
+
+two:
+  nome: MyString
+  endereco: MyString
+  bairro: MyString
+  distribuidora: MyString
+  preco_venda: 9.99
+  preco_compra: 9.99
+  modalidade: MyString
+  fornecedor: MyString
+  data_coleta: MyString

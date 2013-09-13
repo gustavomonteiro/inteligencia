@@ -4,8 +4,7 @@ require 'nokogiri'
 require 'open-uri'
 require 'pg'
 
-
-url = "http://www.anp.gov.br/preco/prc/Resumo_Por_Estado_Municipio.asp"
+url="http://www.anp.gov.br/preco/prc/Resumo_Semanal_Posto.asp"
 
 agent = Mechanize.new
 

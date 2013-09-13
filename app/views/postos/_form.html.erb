@@ -1,0 +1,19 @@
+<%= simple_form_for(@posto) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :nome %>
+    <%= f.input :endereco %>
+    <%= f.input :bairro %>
+    <%= f.input :distribuidora %>
+    <%= f.input :preco_venda %>
+    <%= f.input :preco_compra %>
+    <%= f.input :modalidade %>
+    <%= f.input :fornecedor %>
+    <%= f.input :data_coleta %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

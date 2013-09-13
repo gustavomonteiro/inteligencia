@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nome:</b>
+  <%= @posto.nome %>
+</p>
+
+<p>
+  <b>Endereco:</b>
+  <%= @posto.endereco %>
+</p>
+
+<p>
+  <b>Bairro:</b>
+  <%= @posto.bairro %>
+</p>
+
+<p>
+  <b>Distribuidora:</b>
+  <%= @posto.distribuidora %>
+</p>
+
+<p>
+  <b>Preco venda:</b>
+  <%= @posto.preco_venda %>
+</p>
+
+<p>
+  <b>Preco compra:</b>
+  <%= @posto.preco_compra %>
+</p>
+
+<p>
+  <b>Modalidade:</b>
+  <%= @posto.modalidade %>
+</p>
+
+<p>
+  <b>Fornecedor:</b>
+  <%= @posto.fornecedor %>
+</p>
+
+<p>
+  <b>Data coleta:</b>
+  <%= @posto.data_coleta %>
+</p>
+
+
+<%= link_to 'Edit', edit_posto_path(@posto) %> |
+<%= link_to 'Back', postos_path %>
