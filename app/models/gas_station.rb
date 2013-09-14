@@ -1,7 +1,7 @@
 class GasStation < ActiveRecord::Base
   has_many :week_collections, :dependent => :destroy
 
-  attr_accessible :bairro, :distribuidora, :endereco, :nome
+  attr_accessible :bairro, :distribuidora, :endereco, :nome, :municipio, :estado
   
   validates_presence_of :nome
   
