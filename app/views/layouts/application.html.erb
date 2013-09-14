@@ -40,16 +40,11 @@
       <div class="navbar-inner">
         <div class="container-fluid">
           <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
           </a>
           <a class="brand" href="#">Inteligencia</a>
           <div class="container-fluid nav-collapse">
             <ul class="nav">
-              <li><%= link_to "Municipios", "/municipios"  %></li>
-              <li><%= link_to "Link2", "/path2"  %></li>
-              <li><%= link_to "Link3", "/path3"  %></li>
+              <li><%= link_to "Postos", "/postos"  %></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -58,17 +53,9 @@
 
     <div class="container-fluid">
       <div class="row-fluid">
-        <div class="span3">
-        </div><!--/span-->
-        <div class="span9">
           <%= bootstrap_flash %>
           <%= yield %>
-        </div>
       </div><!--/row-->
-
-      <footer>
-        <p>&copy; Company 2013</p>
-      </footer>
 
     </div> <!-- /container -->
 

@@ -1,50 +1,37 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Posto -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
 
-<p>
-  <b>Nome:</b>
-  <%= @posto.nome %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:nome) %>:</strong></dt>
+  <dd><%= @posto.nome %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:endereco) %>:</strong></dt>
+  <dd><%= @posto.endereco %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:bairro) %>:</strong></dt>
+  <dd><%= @posto.bairro %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:distribuidora) %>:</strong></dt>
+  <dd><%= @posto.distribuidora %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:preco_venda) %>:</strong></dt>
+  <dd><%= @posto.preco_venda %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:preco_compra) %>:</strong></dt>
+  <dd><%= @posto.preco_compra %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:modalidade) %>:</strong></dt>
+  <dd><%= @posto.modalidade %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:fornecedor) %>:</strong></dt>
+  <dd><%= @posto.fornecedor %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:data_coleta) %>:</strong></dt>
+  <dd><%= @posto.data_coleta %></dd>
+</dl>
 
-<p>
-  <b>Endereco:</b>
-  <%= @posto.endereco %>
-</p>
-
-<p>
-  <b>Bairro:</b>
-  <%= @posto.bairro %>
-</p>
-
-<p>
-  <b>Distribuidora:</b>
-  <%= @posto.distribuidora %>
-</p>
-
-<p>
-  <b>Preco venda:</b>
-  <%= @posto.preco_venda %>
-</p>
-
-<p>
-  <b>Preco compra:</b>
-  <%= @posto.preco_compra %>
-</p>
-
-<p>
-  <b>Modalidade:</b>
-  <%= @posto.modalidade %>
-</p>
-
-<p>
-  <b>Fornecedor:</b>
-  <%= @posto.fornecedor %>
-</p>
-
-<p>
-  <b>Data coleta:</b>
-  <%= @posto.data_coleta %>
-</p>
-
-
-<%= link_to 'Edit', edit_posto_path(@posto) %> |
-<%= link_to 'Back', postos_path %>
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              postos_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_posto_path(@posto), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              posto_path(@posto),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>

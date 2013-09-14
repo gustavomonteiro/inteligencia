@@ -1,6 +1,5 @@
-<h1>Editing posto</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @posto %> |
-<%= link_to 'Back', postos_path %>
+<%- model_class = Posto -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => model_class.model_name.human %></h1>
+</div>
+<%= render :partial => 'form' %>
