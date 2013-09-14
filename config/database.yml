@@ -3,11 +3,11 @@ development:
     database: total
     host: localhost
     username: postgres
-    password: postgres
+    password: 12345
 
 test:
     adapter: postgresql
     database: total
     host: localhost
     username: postgres
-    password: postgres
+    password: 12345
