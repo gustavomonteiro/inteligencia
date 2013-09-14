@@ -1,0 +1,112 @@
+<div class="row-fluid">
+	<div class="span6">
+		<h4>Bairro com maior média</h4>
+		<table class="table table-striped">
+		  <thead>
+			<th>Bairro</th>
+			<th>Média de venda</th>
+		  </thead>
+		  <tbody>
+		    <% @bairro_maior_media.each do |week_collection| %>
+		      <tr>
+		        <td><%= week_collection.bairro %></td>
+		        <td><%= week_collection.avg.to_f.round(3) %></td>
+		      </tr>
+		    <% end %>
+		  </tbody>
+		</table>		
+	</div>
+	<div class="span6">
+		<h4>Bandeira com maior média</h4>
+		<table class="table table-striped">
+		  <thead>
+			<th>Bandeira</th>
+			<th>Média de venda</th>
+		  </thead>
+		  <tbody>
+		    <% @bandeira_maior_media.each do |week_collection| %>
+		      <tr>
+		        <td><%= week_collection.distribuidora %></td>
+		        <td><%= week_collection.avg.to_f.round(3) %></td>
+		      </tr>
+		    <% end %>
+		  </tbody>
+		</table>		
+	</div>
+</div>
+<div class="row-fluid">
+	<div class="span6">
+		<h4>Maiores preços bandeira branca</h4>
+		<table class="table table-striped">
+		  <thead>
+			<th>Nome</th>
+			<th>Preço de Compra</th>
+			<th>Fornecedor</th>
+		  </thead>			
+		  <tbody>
+		    <% @maiores_precos_bandeira_branca.each do |gas_station| %>
+		      <tr>
+		        <td><%= gas_station.nome %></td>
+		        <td><%= gas_station.preco_compra.to_f.round(3) %></td>
+		        <td><%= gas_station.fornecedor %></td>
+		      </tr>
+		    <% end %>
+		  </tbody>
+		</table>				
+	</div>
+	<div class="span6">
+		<h4>Menores preços bandeira branca</h4>
+		<table class="table table-striped">
+		  <thead>
+			<th>Nome</th>
+			<th>Preço de Compra</th>
+			<th>Fornecedor</th>
+		  </thead>			
+		  <tbody>
+		    <% @menores_precos_bandeira_branca.each do |gas_station| %>
+		      <tr>
+		        <td><%= gas_station.nome %></td>
+		        <td><%= gas_station.preco_compra.to_f.round(3) %></td>
+		        <td><%= gas_station.fornecedor %></td>
+		      </tr>
+		    <% end %>
+		  </tbody>
+		</table>		
+	</div>
+</div>
+<div class="row-fluid">
+	<div class="span6">
+		<h4>Top 5 distribuidores bandeira branca</h4>
+		<table class="table table-striped">
+		  <thead>
+			<th>Distribuidora</th>
+			<th>Quantidade de postos</th>
+		  </thead>			
+		  <tbody>
+		    <% @top_5_distribuidores.each do |gas_station| %>
+		      <tr>
+		        <td><%= gas_station.distribuidora %></td>
+		        <td><%= gas_station.count %></td>
+		      </tr>
+		    <% end %>
+		  </tbody>
+		</table>		
+	</div>
+	<div class="span6">
+		<h4>Top 5 fornecedor bandeira branca</h4>
+		<table class="table table-striped">
+		  <thead>
+			<th>Fornecedor</th>
+			<th>Quantidade de postos</th>
+		  </thead>			
+		  <tbody>
+		    <% @top_5_fornecedores.each do |week_collection| %>
+		      <tr>
+		        <td><%= week_collection.fornecedor %></td>
+		        <td><%= week_collection.count %></td>
+		      </tr>
+		    <% end %>
+		  </tbody>
+		</table>				
+	</div>
+</div>

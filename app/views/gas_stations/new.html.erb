@@ -1,0 +1,5 @@
+<%- model_class = GasStation -%>
+
+  <legend><%=t '.title', :default => [:'helpers.titles.new', 'New %{model}'], :model => model_class.model_name.human %></legend>
+</div>
+<%= render :partial => 'form' %>

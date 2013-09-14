@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class MunicipioTest < ActiveSupport::TestCase
+class GasStationTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

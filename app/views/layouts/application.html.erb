@@ -41,10 +41,11 @@
         <div class="container-fluid">
           <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
           </a>
-          <a class="brand" href="#">Inteligencia</a>
+          <a class="brand" href="#">Inteligência</a>
           <div class="container-fluid nav-collapse">
             <ul class="nav">
-              <li><%= link_to "Postos", "/postos"  %></li>
+			  <li><%= link_to t('.dashboard'), root_path %></li>
+              <li><%= link_to "Postos", "/gas_stations"  %></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>

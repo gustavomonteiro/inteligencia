@@ -1,0 +1,63 @@
+<%- model_class = GasStation -%>
+<div class="pull-right">
+	<form class="form-search">
+		<%= text_field_tag :search, params[:search], :placeholder => "UF, Município ou Bairro" %>
+		<button type="submit" class="btn"><i class='icon-search'></i></button>
+	</form>
+</div>	
+
+<legend><%=t '.title', :default => model_class.model_name.human.pluralize %></legend>
+
+
+<div class="pull-right" style="margin: -15px 0 5px 0">
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_gas_station_path,
+            :class => 'btn btn-primary' %>
+</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:nome) %></th>
+      <th><%= model_class.human_attribute_name(:endereco) %></th>
+      <th><%= model_class.human_attribute_name(:bairro) %></th>
+      <th><%= model_class.human_attribute_name(:municipio) %></th>
+      <th><%= model_class.human_attribute_name(:estado) %></th>
+      <th><%= model_class.human_attribute_name(:distribuidora) %></th>
+      <th><%= model_class.human_attribute_name(:preco_venda) %></th>
+      <th><%= model_class.human_attribute_name(:preco_compra) %></th>
+      <th><%= model_class.human_attribute_name(:fornecedor) %></th>
+      <th><%= model_class.human_attribute_name(:data_coleta) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @gas_stations.each do |gas_station| %>
+      <tr>
+        <td><%= link_to gas_station.id, gas_station_path(gas_station) %></td>
+        <td><%= gas_station.nome %></td>
+        <td><%= gas_station.endereco %></td>
+        <td><%= gas_station.bairro %></td>
+        <td><%= gas_station.municipio %></td>
+        <td><%= gas_station.estado %></td>
+        <td><%= gas_station.distribuidora %></td>
+        <td><%= gas_station.week_collections.last.preco_venda %></td>
+        <td><%= gas_station.week_collections.last.preco_compra %></td>
+        <td><%= gas_station.week_collections.last.fornecedor %></td>
+        <td><%= l gas_station.week_collections.last.data %></td>
+        <td>
+	
+	      <%= link_to edit_gas_station_path(gas_station) do %>
+	         <i class="icon-pencil"></i>
+	      <% end %>
+
+	      <%= link_to gas_station_path(gas_station), method: :delete, data: { confirm: 'Deseja realmente remover este registro?' } do %>
+	        <i class="icon-remove"></i>
+	      <% end %>
+	
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

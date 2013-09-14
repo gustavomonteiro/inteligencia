@@ -1,10 +1,5 @@
 Inteligencia::Application.routes.draw do
-  resources :postos
-
-
-  # resources :municipios
+  resources :gas_stations
   
-  root :to => "postos#index" 
-
-
+  root :to => "dashboard#index" 
 end

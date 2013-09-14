@@ -1,0 +1,33 @@
+<legend>Dashboard</legend>
+
+<ul class="nav nav-tabs" id="myTab">
+	<li class="active"><a href="#geral_tab" data-toggle="tab"><%= t('.geral')%></a></li>
+	<li><a href="#foursquare_tab" data-toggle="tab"><%= t('.foursquare')%></a></li>				
+	<li><a href="#kekanto_tab" data-toggle="tab"><%= t('.kekanto')%></a></li>				
+	<li><a href="#apontador_tab" data-toggle="tab"><%= t('.apontador')%></a></li>				
+	<li><a href="#mapa_tab" data-toggle="tab"><%= t('.Mapa')%></a></li>				
+</ul>
+
+
+<div class="tab-content">
+	<div class="tab-pane active" id="geral_tab">
+		<!-- < % = render :partial => 'geral', :locals => {:model_class => model_class} %> -->
+		<%= render :partial => 'geral'%>
+	</div>
+	<div class="tab-pane" id="foursquare_tab">
+		<%= render :partial => 'foursquare' %>
+	</div>
+	<div class="tab-pane" id="kekanto_tab">
+		<%= render :partial => 'kekanto' %>
+	</div>
+	
+	<div class="tab-pane" id="apontador_tab">
+		<%= render :partial => 'apontador'%>
+	</div>
+	
+	<div class="tab-pane" id="mapa_tab">
+		<%= render :partial => 'mapa'%>
+	</div>
+	
+</div>
+
