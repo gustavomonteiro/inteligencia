@@ -14,6 +14,7 @@
 
     <%= stylesheet_link_tag "application", :media => "all" %>
 
+
     <!-- For third-generation iPad with high-resolution Retina display: -->
     <!-- Size should be 144 x 144 pixels -->
     <%= favicon_link_tag 'images/apple-touch-icon-144x144-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '144x144' %>
@@ -64,6 +65,34 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <%= javascript_include_tag "application" %>
+	<%= javascript_include_tag "jquery.1.9.1.min", "rails", "highcharts" %>
+	
+	<script type="text/javascript" charset="utf-8">
+		$(function() {
+			new Highcharts.Chart({
+				chart: {
+					renderTo: "price_chart"
+				},
+				title: {
+					text: "Evolução do Preço"
+				},
+				xAxis: {
+					type: "datetime"
+				},
+				yAxis: {
+					title: {
+						text: "Reais"
+					}
+				},
+				series: [{
+					name: "Preço de venda",
+					pointInterval: <%= 1.week * 1000 %>,
+					pointStart: <%= 4.weeks.ago.to_i * 1000 %>,
+					data: [2.4, 2.45, 2.49, 2.55, 2.45]
+				}]
+			});
+		});
+	</script>
 
   </body>
 </html>

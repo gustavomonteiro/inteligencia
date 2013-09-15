@@ -39,7 +39,9 @@
 		</table>
 	</div>
 	<div class="span6">
-		<h5>Evolução do Preço</h5>
+		<div id="price_chart" style="width:560px; height:300px;">
+
+		</div>
 	</div>	
 </div>
 <div class="row-fluid">	
@@ -54,8 +56,6 @@
 		  <li><%= link_to location.gas_station.nome, gas_station_path(location.gas_station) %>, <%= location.gas_station.endereco %> (<%= location.distance.to_f.round(2) %> KM)</li>
 		<% end %>
 		</ul>
-		
-		
 	</div>
 </div>
 
