@@ -5,7 +5,7 @@ gem 'pg', '~> 0.14.1'
 gem 'rails', '3.2.11'
 gem 'simple_form'
 gem 'mechanize', '~> 2.7.1'
-
+gem 'geocoder'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
