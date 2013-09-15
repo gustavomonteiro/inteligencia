@@ -42,6 +42,7 @@ GEM
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    geocoder (1.1.8)
     hike (1.2.3)
     http-cookie (1.0.1)
       domain_name (~> 0.5)
@@ -135,6 +136,7 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 3.2.1)
+  geocoder
   jquery-rails
   mechanize (~> 2.7.1)
   pg (~> 0.14.1)

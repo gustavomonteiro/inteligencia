@@ -11,21 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130914143417) do
-
-  create_table "collections", :force => true do |t|
-    t.integer  "cod_semana"
-    t.decimal  "preco_venda"
-    t.decimal  "preco_compra"
-    t.string   "modalidade"
-    t.string   "fornecedor"
-    t.date     "data"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
-    t.integer  "gas_station_id"
-  end
-
-  add_index "collections", ["gas_station_id"], :name => "index_collections_on_gas_station_id"
+ActiveRecord::Schema.define(:version => 20130915132832) do
 
   create_table "gas_stations", :force => true do |t|
     t.string   "nome"
@@ -36,6 +22,14 @@ ActiveRecord::Schema.define(:version => 20130914143417) do
     t.datetime "updated_at",    :null => false
     t.string   "estado"
     t.string   "municipio"
+  end
+
+  create_table "locations", :force => true do |t|
+    t.string   "address"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "municipios", :force => true do |t|
@@ -51,22 +45,9 @@ ActiveRecord::Schema.define(:version => 20130914143417) do
     t.decimal  "distribuidor_preco_maximo"
     t.datetime "created_at",                 :null => false
     t.datetime "updated_at",                 :null => false
+    t.string   "nome"
     t.string   "semana_inicio"
     t.string   "semana_fim"
-  end
-
-  create_table "postos", :force => true do |t|
-    t.string   "nome"
-    t.string   "endereco"
-    t.string   "bairro"
-    t.string   "distribuidora"
-    t.decimal  "preco_venda"
-    t.decimal  "preco_compra"
-    t.string   "modalidade"
-    t.string   "fornecedor"
-    t.string   "data_coleta"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
   end
 
   create_table "week_collections", :force => true do |t|
