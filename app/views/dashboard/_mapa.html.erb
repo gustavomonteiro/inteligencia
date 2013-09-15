@@ -1,0 +1,15 @@
+<div class="row-fluid">
+	<div class="span4">
+		<h5>Mapa</h5>
+				<%= image_tag( "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{Location.last.latitude}%2C#{Location.last.longitude}") %>
+	</div>
+	<div class="span8">
+		<h5>Postos</h5>
+		<ul>
+		<% for location in Location.last.nearbys(20) %>
+		  <li><%= link_to location.gas_station.nome, gas_station_path(location.gas_station) %>, <%= location.gas_station.endereco %></li>
+		<% end %>
+		</ul>
+		
+	</div>
+</div>

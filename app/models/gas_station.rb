@@ -1,5 +1,6 @@
 class GasStation < ActiveRecord::Base
   has_many :week_collections, :dependent => :destroy
+  has_one :location, :dependent => :destroy
 
   attr_accessible :bairro, :distribuidora, :endereco, :nome, :municipio, :estado
   
@@ -14,6 +15,10 @@ class GasStation < ActiveRecord::Base
     else
       joins(:week_collections).order('week_collections.preco_venda DESC')
     end
+  end
+  
+  def complete_address
+    "#{endereco}, #{bairro}, #{municipio} - #{estado}"
   end
   
 end

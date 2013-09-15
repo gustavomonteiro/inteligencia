@@ -8,7 +8,6 @@
 
 <legend><%=t '.title', :default => model_class.model_name.human.pluralize %></legend>
 
-
 <div class="pull-right" style="margin: -15px 0 5px 0">
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_gas_station_path,
@@ -18,7 +17,6 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:nome) %></th>
       <th><%= model_class.human_attribute_name(:endereco) %></th>
       <th><%= model_class.human_attribute_name(:bairro) %></th>
@@ -35,8 +33,7 @@
   <tbody>
     <% @gas_stations.each do |gas_station| %>
       <tr>
-        <td><%= link_to gas_station.id, gas_station_path(gas_station) %></td>
-        <td><%= gas_station.nome %></td>
+        <td><%= link_to gas_station.nome, gas_station_path(gas_station) %></td>
         <td><%= gas_station.endereco %></td>
         <td><%= gas_station.bairro %></td>
         <td><%= gas_station.municipio %></td>

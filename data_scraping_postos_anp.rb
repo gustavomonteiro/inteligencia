@@ -39,13 +39,19 @@ extrair.css('.linkpadrao').each do |posto|
 	modalidade 		= (posto.parent.parent.search('td').map &:text)[6].gsub("-" , "N/A") 
 	fornecedor 		= (posto.parent.parent.search('td').map &:text)[7].capitalize.split(' ')[0].gsub("-" , "N/A") 
 	data 	= Date.parse((posto.parent.parent.search('td').map &:text)[8])
+	
+	location = Location.new
+	location.address = gas_station.complete_address
+	location.gas_station_id = gas_station.id
+	location.save!
 
   WeekCollection.find_or_create_by_cod_semana_and_gas_station_id(cod_semana, gas_station.id).update_attributes(
 	  :preco_venda => preco_venda, :preco_compra => preco_compra, :modalidade => modalidade, 
 	  :fornecedor => fornecedor, :data => data, :gas_station_id => gas_station.id)
 end
+
+l = Location.new
+l.address = "Recife - Pernambuco"
+l.save!
 	
-
-
-
 
